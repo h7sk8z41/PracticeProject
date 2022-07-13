@@ -2,12 +2,10 @@
   <strong>Commenter:</strong>
   <%= comment.user.username %>
 </p>
-
 <p>
   <strong>Comment:</strong>
   <%= comment.content %>
 </p>
-
 <p>
   <%= link_to "Destroy Comment", [comment.post, comment], data: {
     turbo_method: :delete,

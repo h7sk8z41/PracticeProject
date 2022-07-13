@@ -5,7 +5,9 @@
     <li>
     <%= post.title %>
       <%= link_to "show", post_path(post) %>
+      <% if post.author?(current_user) %>
       <%= link_to "edit", edit_post_path(post) %>
+      <% end %>
     </li>
   <% end %>
 </ul>
