@@ -1,0 +1,34 @@
+<h1><%= @post.title %></h1>
+
+<p><%= @post.body %></p>
+
+
+
+
+
+<% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+  <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+<% else %>
+  <%= button_to 'Like', post_likes_path(@post), method: :post %>
+<% end %>
+<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+
+
+
+
+<h3>Comments</h3>
+<%= render @post.comments %>
+
+<h4>Add a comment:</h4>
+<%= render 'comments/form' %>
+
+
+<div><%= link_to "Back", posts_path %></div>
+<div><%= link_to "Destroy", post_path(@post), data: {
+  turbo_method: :delete,
+  turbo_confirm: "Are you sure?"
+} %></div>
+
+ 
