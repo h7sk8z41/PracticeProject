@@ -55,9 +55,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_13_134335) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "comments","posts"
-  add_foreign_key "comments","users"
-  add_foreign_key "likes",   "posts"
-  add_foreign_key "likes",   "users"
-  add_foreign_key "posts",   "users"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
+  add_foreign_key "posts", "users"
 end

@@ -1,14 +1,12 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.user.username %>
-</p>
-<p>
-  <strong>Comment:</strong>
-  <%= comment.content %>
-</p>
-<p>
-  <%= link_to "Destroy Comment", [comment.post, comment], data: {
+<div>
+<div style="display: inline"><%= comment.user.username %>:</div>
+<div style="display: inline"><%= comment.content %></div>
+  </div>
+</div>
+<p><% if comment.author?(current_user) %>
+    <%= link_to "Destroy Comment", [comment.post, comment], data: {
     turbo_method: :delete,
     turbo_confirm: "Are you sure?"
   } %>
+    <% end %>
 </p>

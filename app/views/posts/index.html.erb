@@ -1,5 +1,9 @@
-<h1>Posts</h1>
-<%= link_to "new Post", new_post_path %>
+<h1>Posts:</h1>
+<a href="/posts/new" style="margin-top:40px ;display: inline-block; background: #0d6efd; color: #F7F7F7;text-decoration: none;padding: 10px;
+  border-radius: 3px; width: 150px; height: 50px; text-align: center">New post</a>
+
+<div style="margin-top:20px  "></div>
+
 <ul>
   <% @posts.each do |post| %>
     <li>
